@@ -1,0 +1,10 @@
+!!!Strict
+%html
+  %head
+    %link{:rel=>"stylesheet", :href=>"stylesheets/screen.css", :media=>"screen", :type=>"text/css"}
+    %link{:rel=>"stylesheet", :href=>"stylesheets/print.css", :media=>"print", :type=>"text/css"}
+    <!--[if IE]>
+    %link{:rel=>"stylesheet", :href=>"stylesheets/ie.css", :media=>"screen, projection", :type=>"text/css"}
+    < ![endif]-->
+
+    = yield
