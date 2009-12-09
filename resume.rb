@@ -20,5 +20,5 @@ get '/stylesheets/:name.css' do
 end
 
 get '/' do
-  haml :plain
+  haml :resume
 end
