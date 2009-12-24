@@ -1,3 +1,4 @@
 haml
-sass
-compass
+compass --version ">=0.10.0.pre2"
+compass-colors
+fancy-buttons
