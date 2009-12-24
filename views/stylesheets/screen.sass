@@ -18,24 +18,109 @@ form
 
 // Page layout can be done using mixins applied to your semantic classes and IDs:
 body
+  :background
+    :color = !dark_blue
   #container
     +container
+    :padding 20px
   #header, #footer
     +column(!blueprint_grid_columns)
+    :text-align center
   #sidebar
     // One third of the grid columns, rounding down. With 24 cols, this is 8.
     !sidebar_columns = floor(!blueprint_grid_columns / 3)
     +column(!sidebar_columns, true)
+    h1
+      :font-size 6em
+      :margin 0 0 0.5em
+      :color = !red
+      :font-family Courier
+      :padding-left 5px
+      .cursor
+        :color = !red
+    .sideblock
+      :padding 0.5em
+      img.right
+        :margin-top 0
+  #footer, #sidebar
+    small, p, span, a, h2, h3, dl
+      :color #fff
   #content
     // Two thirds of the grid columns, rounding up.
     // With 24 cols, this is 16.
+    :background-color #fff
     !content_columns = ceil(2 * !blueprint_grid_columns / 3)
-    // true means it's the last column in the row
     +column(!content_columns)
+
     .horizontal-list
       +horizontal-list
       +append-bottom
+    .block
+      :padding 1em
+    ul
+      :padding-left 2.5em
+      
+    .section
+      :position relative
+      :margin 1em 0
+      :border
+        :top = 1px "solid" !term_tab_border
+        :bottom = 1px "solid" !term_tab_border
+      
+      h2, .tab-border, .tab-border-right  
+        :background
+          :color = !term_tab_background
+          :image -webkit-gradient(linear, 0% 0%, 0% 95%, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0)))
+      
+      .tab-border, .tab-border-right
+        :height 38px
+        :position absolute
+        :top -1px
+        :z-index -1
+        :border
+          :top = 1px "solid" !term_tab_border
+          :bottom  = 1px "solid" !term_tab_border
+      .tab-highlight, .tab-highlight-right
+        :height 36px
+        :position absolute
+        :top 0      
+        :z-index -1
+        :border
+          :top = 1px "solid" !term_tab_highlight
+          :bottom = 1px "solid" !term_tab_highlight
+          
+      .tab-border
+        :border-left = 1px "solid" !term_tab_border
+        :width 20px
+        :left -20px
+        .tab-highlight
+          :border-left = 1px "solid" !term_tab_highlight
+          :left 0
+          :width 19px
+          
+      .tab-border-right
+        :border-right = 1px "solid" !term_tab_border
+        :width 5px
+        :right -5px
+        .tab-highlight-right
+          :border-right = 1px "solid" !term_tab_highlight
+          :right 0
+          :width 4px
+          
+      h2
+        :font-family Courier
+        :border
+          :top = 1px "solid" !term_tab_highlight
+          :bottom = 1px "solid" !term_tab_highlight
+        :text-shadow 0px 1px 1px #ddd
+        :margin 0
+        
+  #objective
+    :padding
+      :left 2.5em
+      :right 2.5em
   ul
     +no-bullets
     
 @import partials/keywords.sass
+@import partials/buttons.sass

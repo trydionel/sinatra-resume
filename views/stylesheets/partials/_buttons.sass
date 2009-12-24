@@ -1,0 +1,27 @@
+@import fancy_buttons.sass
+
+=custom-fancy-gradient(!color1, !color2)
+  +radial-gradient("50% 10%, 10, 50% 10%, 30", !color1, darken(!color2, 5))
+
+=link-icon(!img)
+  :display block
+  :height 20px
+  :line-height 14px
+  :padding-left 20px
+  :background
+    :image = image_url(!img)
+    :repeat no-repeat
+
+a.fancy
+  +fancy-button-structure(18px, 16px)
+  +fancy-button-colors-matte(!red)
+  :margin-bottom 0.5em
+
+#email
+  +link-icon("email.png")
+#twitter
+  +link-icon("twitter.png")
+#blog
+  +link-icon("feed.png")
+#github
+  +link-icon("git.png")
