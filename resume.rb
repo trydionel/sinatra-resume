@@ -7,13 +7,15 @@ require 'haml'
 require 'sass'
 require 'md5'
 
-configure do
+configure :development do
   Compass.configuration do |config|
     config.project_path = File.dirname(__FILE__)
     config.sass_dir = 'views'
     config.images_dir = '/'
   end
-  
+end
+
+configure do  
   set :haml, { :format => :html5, :layout => :'layouts/application' }
   set :sass, Compass.sass_engine_options
 end
