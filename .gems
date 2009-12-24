@@ -1,4 +1,4 @@
-haml
+haml --version ">=2.2.14"
 compass --version ">=0.10.0.pre2"
 compass-colors
 fancy-buttons
