@@ -1,28 +1,40 @@
-#header
-  %h1 Jeff Tucker
-  %a.activate-keywords{:href => "#"} View keywords only
-  %hr
 #content
-  %h3 Objective
-  %p
+  .section
+    .tab-border
+      &nbsp;
+      .tab-highlight &nbsp;
+    .tab-border-right
+      &nbsp;
+      .tab-highlight-right &nbsp;
+    %h2 Objective
+  %p#objective
     I am currently looking for a position as an
     %span.loud Application Developer.
     My primary interest is in 
     %span.loud Ruby
     and
     %span.loud web applications.
-  %hr
-  %h3 Technical Capacities
+  .section
+    .tab-border
+      &nbsp;
+      .tab-highlight &nbsp;
+    .tab-border-right
+      &nbsp;
+      .tab-highlight-right &nbsp;
+    %h2 Technical Capacities
   %ul
-    %li.toggle-handler
+    %li.expand-handler
       %h4 Primary Skills
-      %ul.horizontal-list.toggleable.open
+      %ul.horizontal-list.expandable
         %li Ruby
         %li.loud Ruby on Rails
         %li RDBMS (MySQL & SQL Server)
         %li.loud XHTML
         %li.loud CSS
         %li.loud Javascript (jQuery & Prototype)
+        %li git
+        %li Linux
+        %li Mac
     %li.toggle-handler
       %h4 Basic Experience
       %ul.horizontal-list.toggleable
@@ -31,13 +43,20 @@
         %li Objective-C
         %li PHP
         %li .NET
+        %li SVN
     %li.toggle-handler
       %h4 Currently Exploring
       %ul.horizontal-list.toggleable
         %li Erlang
         %li Clojure
-  %hr
-  %h3 Professional Experience
+  .section
+    .tab-border
+      &nbsp;
+      .tab-highlight &nbsp;
+    .tab-border-right
+      &nbsp;
+      .tab-highlight-right &nbsp;
+    %h2 Professional Experience
   %ul
     %li.toggle-handler
       %h4 Senior Analyst
@@ -69,13 +88,20 @@
           and
           %span.loud MySQL
           online database management for startup web design company. Consulted for several website design projects, including DUB MAG Audio, Sound Sensations and Omni International.
-  %hr
-  %h3 Academic Experience
+  .section
+    .tab-border
+      &nbsp;
+      .tab-highlight &nbsp;
+    .tab-border-right
+      &nbsp;
+      .tab-highlight-right &nbsp;
+    %h2 Academic Experience
   %ul
     %li.toggle-handler
       %h4 Research Assistant
       .toggleable.open
         %span.location Berry College Physics Department
+        %span.dates Sept 2006 &mdash; July 2007
         %p
           Designed and implemented
           %span.loud Java
@@ -102,48 +128,65 @@
       .toggleable
         %span.location Berry College IT Department
         %p Served in multiple areas of information technology, including Technical Support Desk, Macintosh Support, PC Support and Network Support. Promoted from Student Worker to Student Supervisor within 2 weeks of hire by earning the CompTIA A+ Certification faster than any student before.
-  %hr
-  %h3 Education
+  .section
+    .tab-border
+      &nbsp;
+      .tab-highlight &nbsp;
+    .tab-border-right
+      &nbsp;
+      .tab-highlight-right &nbsp;
+    %h2 Education
   %ul
     %li.toggle-handler
-      %h4 Bachelors of Science, Physics & Mathematics
+      %h4
+        Bachelors of Science,
+        %span.loud Physics & Mathematics
       .toggleable
         %span.location Berry College
         %span.dates Aug 2003 &mdash; May 2007
-  %hr
-  %h3 Other Interests
+  .section
+    .tab-border
+      &nbsp;
+      .tab-highlight &nbsp;
+    .tab-border-right
+      &nbsp;
+      .tab-highlight-right &nbsp;
+    %h2 Other Interests
   %ul
     %li Hobby electronics & circuitry
     %li All things Zelda, Mario & Samus
     %li My (soon-to-be) wife and our two cats
 #sidebar
-  %h2 Contact
-  %p#hcard-jeff-tucker.vcard
-    %img.right{:src => "http://www.gravatar.com/avatar/ac9a9cc3ecb6e86f907979d8ffec31de?s=80"}
-    %span.fn Jeff Tucker
-    is currently located in
-    %span.locality Atlanta,
-    %span.region GA.
-    You can contact him in a few ways:
-    %ul
-      %li
-        Email: 
-        %a.email{:href => "mailto:jeff@trydionel.com"} jeff@trydionel.com
-      %li
-        Twitter:
-        %a.twitter{:href => "http://twitter.com/trydionel"} Trydionel
-      %li
-        Github:
-        %a.github{:href => "http://github.com/trydionel"} trydionel
+  %h1><
+    Jeff Tucker
+    %span.cursor>< _
+  .sideblock
+    %p#hcard-jeff-tucker.vcard
+      %img.right{:src => gravatar_link("trydionel@gmail.com", 100)}
+      %span.fn Jeff Tucker
+      is currently located in
+      %span.locality Atlanta,
+      %span.region GA.
+      You can contact him in a few ways:
+      %ul
+        %li
+          %a#email{:href => "mailto:jeff@trydionel.com"} jeff@trydionel.com
+        %li
+          %a#twitter{:href => "http://twitter.com/trydionel"} Trydionel
+        %li
+          %a#github{:href => "http://github.com/trydionel"} trydionel
+        %li
+          %a#blog{:href => "http://trydionel.wordpress.com"} spiral_code
+    %a.fancy.activate-keywords{:href => "#"} View keywords only
+    %a.fancy{:href => "mailto:jeff@trydionel.com"} Open to Offers
 #footer
-  %hr
   %small
     This application is a smooth mix of
     %a{:href => "http://haml-lang.com"} HAML
     \,
     %a{:href => "http://sass-lang.com"} SASS
     and
-    %a{:href => ""} Compass
+    %a{:href => "http://compass-style.org/"} Compass
     led by
     %a{:href => "http://sinatrarb.com"} Sinatra
     \. You can find the source code on my
