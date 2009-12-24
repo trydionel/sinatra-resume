@@ -1,0 +1,64 @@
+@import base.sass
+@import borders.sass
+
+.section
+  :position relative
+  :margin 1em 0
+  :border
+    :top = 1px "solid" !term_tab_border
+    :bottom = 1px "solid" !term_tab_border
+  
+  h2, .tab-border, .tab-border-right  
+    :background
+      :image -webkit-gradient(linear, 0% 0%, 0% 95%, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0)))
+      :image -moz-linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0))
+  
+  .tab-border, .tab-border-right
+    :height 32px
+    :position absolute
+    :top -1px
+    :z-index -1
+    :border = 1px "solid" !term_tab_border
+  .tab-highlight, .tab-highlight-right
+    :height 30px
+    :position absolute
+    :top 0      
+    :z-index -1
+    :border = 1px "solid" !term_tab_highlight
+
+  .tab-border, .tab-highlight
+    :border-right 0
+    
+  .tab-border-right, .tab-highlight-right
+    :border-left 0
+      
+  .tab-border
+    !tab_width = 20px
+    +border-radius(2px, 0)
+    :width = !tab_width - 1px
+    :left = -1*!tab_width
+    .tab-highlight
+      +border-radius(1px, 0)
+      :left 0
+      :width = !tab_width - 2px
+      
+  .tab-border-right
+    !tab_width = 5px
+    +border-radius(0, 2px)
+    :width = !tab_width - 1px
+    :right = -1*!tab_width
+    .tab-highlight-right
+      +border-radius(0, 1px)
+      :right 0
+      :width = !tab_width - 2px
+      
+  h2
+    :font-family Geneva, Courier
+    :font-size 16px
+    :padding 3px 0 3px 1em
+    :border
+      :top = 1px "solid" !term_tab_highlight
+      :bottom = 1px "solid" !term_tab_highlight
+    :text-shadow 0px 1px 1px #222
+    :margin 0
+    :color = #eee
