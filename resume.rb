@@ -11,7 +11,7 @@ configure :development do
   Compass.configuration do |config|
     config.project_path = File.dirname(__FILE__)
     config.sass_dir = 'views'
-    config.images_dir = '/'
+    config.images_dir = 'images'
   end
 end
 
