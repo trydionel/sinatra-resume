@@ -21,7 +21,7 @@ form
 body
   :background
     :color = !background
-    :image url('/wood.png')
+    :image url('/titanium.png')
     :repeat no-repeat
     :position top center
 
@@ -41,15 +41,13 @@ body
     +float-right
     :padding 1.5em
     h1
-      +border-radius(10px, 10px)
-      :font-size 6em
-      :background-color rgba(32, 32, 32, 0.9)
+      :font-size 4em
       :margin 0 0 0.5em
-      :color = !red
+      :color #eee
       :font-family Geneva, Courier
       :padding-left 5px
       .cursor
-        :color = !red
+        :color #eee
     .sideblock
       :padding 0.5em
       img.right
@@ -60,13 +58,12 @@ body
 
   #content, #footer, #sidebar
     +border-radius(10px, 10px)
-    :background-color rgba(255, 255, 255, 0.2)
+    :background-color rgba(180, 200, 215, 0.2)
     
     small, p, span, a, h3, h4, li, dl
       :color #ddd
 
   #content
-    :background-color rgba(255, 255, 255, 0.2)
     !content_columns = ceil(2 * !blueprint_grid_columns / 3)
     +column(!content_columns - 1)
     +float-left
