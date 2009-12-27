@@ -22,14 +22,7 @@
     %a.fancy.activate-keywords{:href => "#"} View keywords only
     %a.fancy{:href => "mailto:jeff@trydionel.com"} Open to Offers
 #content
-  .section
-    .tab-border
-      &nbsp;
-      .tab-highlight &nbsp;
-    .tab-border-right
-      &nbsp;
-      .tab-highlight-right &nbsp;
-    %h2 Objective
+  = partial :header, :locals => { :title => "Objective" }
   %p#objective
     I am currently looking for a position as an
     %span.loud Application Developer.
@@ -37,14 +30,7 @@
     %span.loud Ruby
     and
     %span.loud web applications.
-  .section
-    .tab-border
-      &nbsp;
-      .tab-highlight &nbsp;
-    .tab-border-right
-      &nbsp;
-      .tab-highlight-right &nbsp;
-    %h2 Technical Capacities
+  = partial :header, :locals => { :title => "Technical Capacities" }
   %ul
     %li.expand-handler
       %h4 Primary Skills
@@ -72,14 +58,7 @@
       %ul.horizontal-list.toggleable
         %li Erlang
         %li Clojure
-  .section
-    .tab-border
-      &nbsp;
-      .tab-highlight &nbsp;
-    .tab-border-right
-      &nbsp;
-      .tab-highlight-right &nbsp;
-    %h2 Professional Experience
+  = partial :header, :locals => { :title => "Professional Experience" }
   %ul
     %li.toggle-handler
       %h4 Senior Analyst
@@ -110,14 +89,7 @@
           and
           %span.loud MySQL
           online database management for startup web design company. Consulted for several website design projects, including DUB MAG Audio, Sound Sensations and Omni International.
-  .section
-    .tab-border
-      &nbsp;
-      .tab-highlight &nbsp;
-    .tab-border-right
-      &nbsp;
-      .tab-highlight-right &nbsp;
-    %h2 Academic Experience
+  = partial :header, :locals => { :title => "Academic Experience" }
   %ul
     %li.toggle-handler
       %h4 Research Assistant
@@ -150,14 +122,7 @@
       .toggleable
         %span.location Berry College IT Department
         %p Served in multiple areas of information technology, including Technical Support Desk, Macintosh Support, PC Support and Network Support. Promoted from Student Worker to Student Supervisor within 2 weeks of hire by earning the CompTIA A+ Certification faster than any student before.
-  .section
-    .tab-border
-      &nbsp;
-      .tab-highlight &nbsp;
-    .tab-border-right
-      &nbsp;
-      .tab-highlight-right &nbsp;
-    %h2 Education
+  = partial :header, :locals => { :title => "Education" }
   %ul
     %li.toggle-handler
       %h4
@@ -166,14 +131,7 @@
       .toggleable
         %span.location Berry College
         %span.dates Aug 2003 &mdash; May 2007
-  .section
-    .tab-border
-      &nbsp;
-      .tab-highlight &nbsp;
-    .tab-border-right
-      &nbsp;
-      .tab-highlight-right &nbsp;
-    %h2 Other Interests
+  = partial :header, :locals => { :title => "Other Interests" }
   %ul
     %li Hobby electronics & circuitry
     %li All things Zelda, Mario & Samus

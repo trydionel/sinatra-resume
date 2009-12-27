@@ -24,6 +24,10 @@ helpers do
   def gravatar_link(email, size=80)
     "http://www.gravatar.com/avatar/#{MD5::md5(email.downcase)}?s=#{size}"
   end
+  
+  def partial(page, options = {})
+    haml page, options.merge!(:layout => false)
+  end
 end
 
 get '/gravatar' do
