@@ -21,17 +21,29 @@ configure do
 end
 
 helpers do
+  def data(source='data.yaml')
+    @data ||= YAML.load_file(source)
+  end
+  
   def gravatar_link(email, size=80)
     "http://www.gravatar.com/avatar/#{MD5::md5(email.downcase)}?s=#{size}"
   end
   
   def partial(page, options = {})
-    haml page, options.merge!(:layout => false)
+    haml :"partials/_#{page}", options.merge!(:layout => false)
   end
-end
-
-get '/gravatar' do
-  gravatar_link("trydionel@gmail.com")
+  
+  def highlight(text)
+    highlighter = '<span class="keyword">\1</span>'
+    phrases = data["keywords"]
+    
+    if text.blank? || phrases.empty?
+      text
+    else
+      match = Array(phrases).map { |p| Regexp.escape(p) }.join('|')
+      text.gsub(/(#{match})(?!(?:[^<]*?)(?:["'])[^<>]*>)/i, highlighter)
+    end
+  end
 end
 
 get '/stylesheets/:name.css' do
@@ -40,5 +52,6 @@ get '/stylesheets/:name.css' do
 end
 
 get '/' do
+  @sections = data["sections"]
   haml :resume
 end

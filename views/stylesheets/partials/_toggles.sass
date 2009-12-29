@@ -1,6 +1,15 @@
-.open
-  .toggleable
+.toggle-handler
+  :padding-left 2.5em
+
+.open, .closed  
+  :background
+    :repeat no-repeat
+    :position 10px 1px
     
+.open
+  :background
+    :image = image_url("control_remove.png")
+
 .closed
-  .toggleable
-    :display none
+  :background
+    :image = image_url("control_add.png")

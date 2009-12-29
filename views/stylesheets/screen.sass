@@ -7,17 +7,7 @@
 
 //Recommended Blueprint configuration with scoping and semantic layout:
 +blueprint-typography("body")
-+blueprint-scaffolding("body")
-body
-  +blueprint-utilities
-  +blueprint-debug
-  +blueprint-interaction
-  // Remove the scaffolding when you're ready to start doing visual design.
-  // Or leave it in if you're happy with how blueprint looks out-of-the-box
-form
-  +blueprint-form
 
-// Page layout can be done using mixins applied to your semantic classes and IDs:
 body
   :background
     :color = !background
@@ -29,10 +19,11 @@ body
     +container
     :padding 20px
     
-  #footer
-    +column(!blueprint_grid_columns)
-    :text-align center
-    :margin-top 0.5em
+  #content, #footer, #sidebar
+    +border-radius(10px, 10px)
+    :background-color rgba(61, 65, 68, 0.6)    
+    small, p, span, a, h3, h4, h5, li, dl
+      :color #fff
     
   #sidebar
     // One third of the grid columns, rounding down. With 24 cols, this is 8.
@@ -43,11 +34,11 @@ body
     h1
       :font-size 4em
       :margin 0 0 0.5em
-      :color #eee
+      :color #fff
       :font-family Geneva, Courier
       :padding-left 5px
       .cursor
-        :color #eee
+        :color #fff
     .sideblock
       :padding 0.5em
       img.right
@@ -56,36 +47,40 @@ body
       +no-bullets
       :padding-left 0.5em
 
-  #content, #footer, #sidebar
-    +border-radius(10px, 10px)
-    :background-color rgba(180, 200, 215, 0.2)
-    
-    small, p, span, a, h3, h4, li, dl
-      :color #ddd
-
   #content
     !content_columns = ceil(2 * !blueprint_grid_columns / 3)
     +column(!content_columns - 1)
     +float-left
 
-    p, span, h3, h4, h5, li
-      :color white
-      &:load
-        :color white
-
-    .horizontal-list
-      +horizontal-list
-      +append-bottom
-    .block
-      :padding 1em
     ul
-      :padding-left 2.5em
+      :list-style-type none
+      :padding-left 0
+      &.horizontal-list
+        +horizontal-list
+        +append-bottom
+      &.examples
+        :list-style-type disc
+        :padding-left 2.5em
+
+    .location, .dates
+      :display block
+    .location
+      :font-weight bold
+    .dates
+      :font-style italic
+    .description
+      :padding-top 0.5em
         
-  #objective
-    :padding
-      :left 2.5em
-      :right 2.5em
+    .single
+      :padding
+        :left 2.5em
+        :right 2.5em
+
+  #footer
+    +column(!blueprint_grid_columns)
+    :text-align center
+    :margin-top 0.5em
     
-@import partials/keywords.sass
 @import partials/buttons.sass
 @import partials/headers.sass
+@import partials/toggles.sass

@@ -12,17 +12,26 @@ var blink = function(element, speed) {
 };
 
 $(document).ready(function() {
-  $(".toggleable").not(".open").hide();
+  $(".closed").children(".toggleable").hide();
   
   // Obnoxious blinky cursor!
   blink($(".cursor"));
   
-  $(".toggle-handler").live("click", function() {
+  $(".toggle-handler").bind("click", function() {
+    $(this).toggleClass("closed");
+    $(this).toggleClass("open");
     $(this).children(".toggleable").toggle("blind");
   });
   
   $(".activate-keywords").bind("click", function(e) {
     e.preventDefault();
-    $("#content").toggleClass("highlight-keywords", 1000);
+    var button = $(this);
+    if (button.text() == "Show Keywords") {
+      $(this).text("Hide Keywords");
+      $("#content").find(".keyword").animate({ color: "#ff0000" }, 1000);      
+    } else {
+      $(this).text("Show Keywords");
+      $("#content").find(".keyword").animate({ color: "#ffffff" }, 1000);            
+    }
   });
 });

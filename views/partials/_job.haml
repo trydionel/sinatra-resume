@@ -1,0 +1,17 @@
+- if job["title"]
+  %h4= highlight job["title"]
+%div{ :class => (toggleable ? "toggleable" : nil) }
+  - if job["list"]
+    %ul.horizontal-list
+      - job["list"].each do |item|
+        %li= highlight item
+  - if job["location"]
+    %span.location= job["location"]
+  - if job["dates"]
+    %span.dates= job["dates"]
+  - if job["description"]
+    %p.description= highlight job["description"]
+  - if job["examples"]
+    %ul.examples
+      - job["examples"].each do |example|
+        %li= highlight example

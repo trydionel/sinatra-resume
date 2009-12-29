@@ -1,0 +1,9 @@
+.section
+  = partial :header, :locals => { :title => section["header"] }
+  - if section["history"]
+    - if section["history"].size == 1
+      .single= partial :job, :locals => { :job => section["history"].first, :toggleable => false }
+    - else
+      %ul
+        - section["history"].each_with_index do |job, index|
+          %li.toggle-handler{:class => (index == 0 ? "open" : "closed")}= partial :job, :locals => { :job => job, :toggleable => true }
