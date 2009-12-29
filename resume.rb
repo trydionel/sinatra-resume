@@ -7,7 +7,7 @@ require 'haml'
 require 'sass'
 require 'md5'
 
-configure :development do
+configure do
   Compass.configuration do |config|
     config.project_path = File.dirname(__FILE__)
     config.sass_dir = 'views'
