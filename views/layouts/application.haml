@@ -4,9 +4,8 @@
     %title Jeff Tucker | resume.trydionel.com
     %link{:rel=>"stylesheet", :href=>"stylesheets/screen.css", :media=>"screen", :type=>"text/css"}
     %link{:rel=>"stylesheet", :href=>"stylesheets/print.css", :media=>"print", :type=>"text/css"}
-    <!--[if IE]>
-    %link{:rel=>"stylesheet", :href=>"stylesheets/ie.css", :media=>"screen, projection", :type=>"text/css"}
-    < ![endif]-->
+    /[if IE]
+      %link{:rel=>"stylesheet", :href=>"stylesheets/ie.css", :media=>"screen, projection", :type=>"text/css"}
     %script{:src => "http://www.google.com/jsapi"}
     :javascript
       google.load("jquery", "1.3.2");
@@ -14,6 +13,9 @@
     %script{:src => "javascripts/application.js"}
     
     #container
+      /[if IE]
+        %div{:style => "border: 1px solid red; background-color: #fee; padding: 5px; margin-bottom: 1em"} Thanks for visiting IE user! Unfortunately, this site is best viewed in a CSS3 capable browser.  Please check again from Safari, Chrome or Firefox.
+      
       = yield
     
     :javascript
