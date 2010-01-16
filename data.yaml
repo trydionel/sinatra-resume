@@ -1,8 +1,5 @@
 keywords: ["Ruby on Rails", "Ruby", "Javascript", "Java", "SQL Server", "MySQL", "Physics", "Mathematics"]
 sections:
-  - header: "Objective"
-    history:
-      - description: "I am currently looking for a position as an Application Developer, specifically working with Ruby and web applications.  I am especially interested in working in a team practicing Agile methodologies."
   - header: "Technical Capacities"
     history:
       - title: "Primary Skills"
@@ -13,10 +10,13 @@ sections:
         list: ["Erlang", "Clojure"]
   - header: "Professional Experience"
     history:
+      - title: "Ruby Developer"
+        location: "Consumer Source, a subsidiary of Primedia"
+        dates: "Feb 2010 &mdash Date"
       - title: "Senior Analyst"
         location: "Global Concepts, a subsidiary of McKinsey & Co"
-        dates: "July 2007 &mdash; Date"
-        description: "Serve as sole application developer for office of business consultants. Control entire development process from collecting requirements to post-deploy maintenance. Some highlight projects include:"
+        dates: "July 2007 &mdash; Feb 2010"
+        description: "Served as sole application developer for office of business consultants. Controled entire development process from collecting requirements to post-deploy maintenance. Some highlight projects include:"
         examples:
           - "Developed Ruby on Rails application to license and deliver proprietary knowledge to clients."
           - "Optimized report generation for benchmarking study with Visual Basic. Reduced average completion time from 2+ days of full interaction to 1 hour of automated calculation."

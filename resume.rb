@@ -13,9 +13,7 @@ configure do
     config.sass_dir = 'views'
     config.images_dir = 'images'
   end
-end
 
-configure do  
   set :haml, { :format => :html5, :layout => :'layouts/application' }
   set :sass, Compass.sass_engine_options
 end
